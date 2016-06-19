@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Calculadora</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
+        <style>
+            html{
+                background-color: white;
+            }
+            body{
+                margin-top: 50px;
+                background-color: #ff6666;
+                width: 800px;
+                height: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 15px;
+            }
+            
+            body h1{
+                background-color: #660000;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: #cccccc;
+                text-align: center;
+                text-transform: uppercase;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                margin-bottom: 100px;
+            }
+            
+            body form{
+                background-color: #cc0000;
+                border-width: 2px;
+                border-style: solid;
+                border-color: black;
+                width: 28%;
+                padding: 20px;
+                border-radius: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h1>calculadora con JSF</h1>
+        
+        <h:form>
+            <h:inputText value="#{calculadoraController.pantalla}" style="width: 208px; margin-left: 4px" />
+            <h:panelGrid columns="5">
+                <h:commandButton value="1" style="width: 40px;height: 40px" action="#{calculadoraController.doUno()}"/>
+                <h:commandButton value="2" style="width: 40px;height: 40px" action="#{calculadoraController.doDos()}"/>
+                <h:commandButton value="3" style="width: 40px;height: 40px" action="#{calculadoraController.doTres()}"/>
+                <h:commandButton value="-" style="width: 40px;height: 40px" action="#{calculadoraController.doRestar()}"/>
+                <h:commandButton value="C" style="width: 40px;height: 40px" action="#{calculadoraController.doResetearUno()}"/>
+                
+                <h:commandButton value="4" style="width: 40px;height: 40px" action="#{calculadoraController.doCuatro()}"/>
+                <h:commandButton value="5" style="width: 40px;height: 40px" action="#{calculadoraController.doCinco()}"/>
+                <h:commandButton value="6" style="width: 40px;height: 40px" action="#{calculadoraController.doSeis()}"/>
+                <h:commandButton value="+" style="width: 40px;height: 40px" action="#{calculadoraController.doSumar()}"/>
+                <h:commandButton value="CE" style="width: 40px;height: 40px" action="#{calculadoraController.doResetear()}"/>
+                
+                <h:commandButton value="7" style="width: 40px;height: 40px" action="#{calculadoraController.doSiete()}"/>
+                <h:commandButton value="8" style="width: 40px;height: 40px" action="#{calculadoraController.doOcho()}"/>
+                <h:commandButton value="9" style="width: 40px;height: 40px" action="#{calculadoraController.doNueve()}"/>
+                <h:commandButton value="*" style="width: 40px;height: 40px" action="#{calculadoraController.doMultiplicar()}"/>
+                <h:commandButton value="1/x" style="width: 40px;height: 40px" action="#{calculadoraController.doInvertirNumero()}"/>
+                
+                <h:commandButton value="0" style="width: 40px;height: 40px" action="#{calculadoraController.doCero()}"/>
+                <h:commandButton value="+/-" style="width: 40px;height: 40px" action="#{calculadoraController.doInvertirSigno()}"/>
+                <h:commandButton value="." style="width: 40px;height: 40px" action="#{calculadoraController.doPunto()}"/>
+                <h:commandButton value="/" style="width: 40px;height: 40px" action="#{calculadoraController.doDividir()}"/>
+                <h:commandButton value="=" style="width: 40px;height: 40px" action="#{calculadoraController.doIgual()}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
