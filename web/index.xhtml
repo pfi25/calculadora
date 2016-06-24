@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Calculadora</title>
         <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'/>
@@ -47,31 +48,71 @@
         <h1>calculadora con JSF</h1>
         
         <h:form>
-            <h:inputText value="#{calculadoraController.pantalla}" style="width: 208px; margin-left: 4px" />
+            <h:inputText id="txtResultado" value="#{calculadoraController.pantalla}" style="width: 208px; margin-left: 4px" />
             <h:panelGrid columns="5">
-                <h:commandButton value="1" style="width: 40px;height: 40px" action="#{calculadoraController.doUno()}"/>
-                <h:commandButton value="2" style="width: 40px;height: 40px" action="#{calculadoraController.doDos()}"/>
-                <h:commandButton value="3" style="width: 40px;height: 40px" action="#{calculadoraController.doTres()}"/>
-                <h:commandButton value="-" style="width: 40px;height: 40px" action="#{calculadoraController.doRestar()}"/>
-                <h:commandButton value="C" style="width: 40px;height: 40px" action="#{calculadoraController.doResetearUno()}"/>
+                <h:commandButton value="1" style="width: 40px;height: 40px" action="#{calculadoraController.doUno()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="2" style="width: 40px;height: 40px" action="#{calculadoraController.doDos()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="3" style="width: 40px;height: 40px" action="#{calculadoraController.doTres()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="-" style="width: 40px;height: 40px" action="#{calculadoraController.doRestar()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="C" style="width: 40px;height: 40px" action="#{calculadoraController.doResetearUno()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
                 
-                <h:commandButton value="4" style="width: 40px;height: 40px" action="#{calculadoraController.doCuatro()}"/>
-                <h:commandButton value="5" style="width: 40px;height: 40px" action="#{calculadoraController.doCinco()}"/>
-                <h:commandButton value="6" style="width: 40px;height: 40px" action="#{calculadoraController.doSeis()}"/>
-                <h:commandButton value="+" style="width: 40px;height: 40px" action="#{calculadoraController.doSumar()}"/>
-                <h:commandButton value="CE" style="width: 40px;height: 40px" action="#{calculadoraController.doResetear()}"/>
+                <h:commandButton value="4" style="width: 40px;height: 40px" action="#{calculadoraController.doCuatro()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="5" style="width: 40px;height: 40px" action="#{calculadoraController.doCinco()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="6" style="width: 40px;height: 40px" action="#{calculadoraController.doSeis()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="+" style="width: 40px;height: 40px" action="#{calculadoraController.doSumar()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="CE" style="width: 40px;height: 40px" action="#{calculadoraController.doResetear()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
                 
-                <h:commandButton value="7" style="width: 40px;height: 40px" action="#{calculadoraController.doSiete()}"/>
-                <h:commandButton value="8" style="width: 40px;height: 40px" action="#{calculadoraController.doOcho()}"/>
-                <h:commandButton value="9" style="width: 40px;height: 40px" action="#{calculadoraController.doNueve()}"/>
-                <h:commandButton value="*" style="width: 40px;height: 40px" action="#{calculadoraController.doMultiplicar()}"/>
-                <h:commandButton value="1/x" style="width: 40px;height: 40px" action="#{calculadoraController.doInvertirNumero()}"/>
+                <h:commandButton value="7" style="width: 40px;height: 40px" action="#{calculadoraController.doSiete()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="8" style="width: 40px;height: 40px" action="#{calculadoraController.doOcho()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="9" style="width: 40px;height: 40px" action="#{calculadoraController.doNueve()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="*" style="width: 40px;height: 40px" action="#{calculadoraController.doMultiplicar()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="1/x" style="width: 40px;height: 40px" action="#{calculadoraController.doInvertirNumero()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
                 
-                <h:commandButton value="0" style="width: 40px;height: 40px" action="#{calculadoraController.doCero()}"/>
-                <h:commandButton value="+/-" style="width: 40px;height: 40px" action="#{calculadoraController.doInvertirSigno()}"/>
-                <h:commandButton value="." style="width: 40px;height: 40px" action="#{calculadoraController.doPunto()}"/>
-                <h:commandButton value="/" style="width: 40px;height: 40px" action="#{calculadoraController.doDividir()}"/>
-                <h:commandButton value="=" style="width: 40px;height: 40px" action="#{calculadoraController.doIgual()}"/>
+                <h:commandButton value="0" style="width: 40px;height: 40px" action="#{calculadoraController.doCero()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="+/-" style="width: 40px;height: 40px" action="#{calculadoraController.doInvertirSigno()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="." style="width: 40px;height: 40px" action="#{calculadoraController.doPunto()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="/" style="width: 40px;height: 40px" action="#{calculadoraController.doDividir()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
+                <h:commandButton value="=" style="width: 40px;height: 40px" action="#{calculadoraController.doIgual()}">
+                <f:ajax execute="txtResultado" render="txtResultado"/>
+                </h:commandButton>
             </h:panelGrid>
         </h:form>
     </h:body>
